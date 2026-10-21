@@ -1,0 +1,108 @@
+@import 'tailwindcss';
+
+/*
+  Design tokens.
+
+  Colours are named by role (primary, accent) rather than by hue, so a rebrand is a change
+  of values here and nothing else. Primary is a deep pine green, accent is a sunlit amber,
+  and the neutrals are warm so they sit comfortably next to both.
+*/
+@theme {
+  --color-primary-950: #0a1f1b;
+  --color-primary-900: #0e2a25;
+  --color-primary-800: #133830;
+  --color-primary-700: #1b4a40;
+  --color-primary-600: #255f53;
+  --color-primary-500: #317567;
+
+  --color-accent-50: #fdf7e6;
+  --color-accent-100: #f9ebc4;
+  --color-accent-200: #f2d68b;
+  --color-accent-300: #eac15b;
+  --color-accent-400: #e0a92f;
+  /* 500 and 600 are for text on light backgrounds. They are much darker than the logo
+     amber because that tone fails WCAG AA contrast on cream. */
+  --color-accent-500: #8a5d0b;
+  --color-accent-600: #704d0c;
+
+  --color-cream: #faf8f3;
+  --color-sand: #f1eee5;
+  --color-stone: #d8d4c9;
+  --color-ink: #0c1a17;
+  --color-slate-muted: #56625e;
+
+  --font-display: var(--font-newsreader), ui-serif, Georgia, serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* The company name in the logo lockup and the footer. */
+  --font-wordmark: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  /* Eyebrows, technology labels, status badges, numbered steps. */
+  --font-label: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* Vertical rhythm between sections, in one place. */
+  --spacing-section: 7rem;
+  --spacing-section-sm: 4.5rem;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+
+  /* Keyboard focus stays visible everywhere (WCAG 2.4.7). */
+  :focus-visible {
+    outline: 2px solid var(--color-accent-500);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-accent-200);
+    color: var(--color-primary-900);
+  }
+}
+
+@layer components {
+  /* Small letterspaced label above section headings. */
+  .eyebrow {
+    font-family: var(--font-label);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-accent-600);
+  }
+
+  /* Thin amber rule used as a divider under eyebrows and in the footer. */
+  .rule-accent {
+    background: linear-gradient(
+      90deg,
+      var(--color-accent-400) 0%,
+      var(--color-accent-200) 60%,
+      transparent 100%
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

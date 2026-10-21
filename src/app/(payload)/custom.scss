@@ -1,0 +1,33 @@
+/*
+  Admin tweaks for narrow editing columns. Both matter most once the live preview is open
+  and the form has half the width it normally does.
+*/
+
+/*
+  Let the tab strip wrap. Payload scrolls it horizontally, which in practice looks like the
+  strip simply ends, and tabs such as Photography and SEO seem not to exist.
+*/
+.tabs-field__tabs {
+  flex-wrap: wrap;
+}
+
+/*
+  Stack side-by-side fields when the form column gets narrow.
+
+  Payload turns `admin.width` into a `--field-width` percentage, so a row of four stays four
+  across at any width. A container query is used because the trigger is the width of the
+  form column, which changes when the preview divider is dragged, not the window width.
+*/
+.document-fields__edit {
+  container-type: inline-size;
+  container-name: cms-fields;
+}
+
+/* 44rem is roughly where a four-across row (the plant metrics) drops below 160px a field.
+   It is below the width the column has when the preview first opens, so the usual layout
+   is untouched. */
+@container cms-fields (max-width: 44rem) {
+  .row__fields > .field-type {
+    --field-width: 100% !important;
+  }
+}

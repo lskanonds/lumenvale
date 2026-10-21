@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" width="240" height="160">
+  <rect width="240" height="160" fill="#f1eee5"/>
+  <rect x="20" y="30" width="26" height="3" fill="#e0a92f"/>
+  <rect x="20" y="44" width="80" height="9" rx="1" fill="#133830"/>
+  <rect x="20" y="64" width="88" height="5" rx="2" fill="#d8d4c9"/>
+  <rect x="19.5" y="86.5" width="88" height="21" fill="#133830"/>
+  <g>
+    <text x="132" y="44" font-family="Georgia, serif" font-size="13" fill="#e0a92f">01</text>
+    <rect x="152" y="34" width="68" height="5" rx="2" fill="#133830"/>
+    <rect x="152" y="45" width="52" height="4" rx="2" fill="#d8d4c9"/>
+    <text x="132" y="82" font-family="Georgia, serif" font-size="13" fill="#e0a92f">02</text>
+    <rect x="152" y="72" width="68" height="5" rx="2" fill="#133830"/>
+    <rect x="152" y="83" width="52" height="4" rx="2" fill="#d8d4c9"/>
+    <text x="132" y="120" font-family="Georgia, serif" font-size="13" fill="#e0a92f">03</text>
+    <rect x="152" y="110" width="68" height="5" rx="2" fill="#133830"/>
+    <rect x="152" y="121" width="52" height="4" rx="2" fill="#d8d4c9"/>
+  </g>
+</svg>

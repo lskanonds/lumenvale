@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- Favicon version of the brand mark: a solid disc and heavier shapes, because the ring
+       and the thin panel rows of the full mark disappear below about 24px. -->
+  <defs>
+    <clipPath id="sky">
+      <rect width="120" height="64" />
+    </clipPath>
+  </defs>
+  <circle cx="60" cy="60" r="60" fill="#133830" />
+  <circle cx="60" cy="62" r="26" fill="#e0a92f" clip-path="url(#sky)" />
+  <path d="M18 72 H102 L98 82 H22 Z" fill="#faf8f3" />
+  <path d="M28 90 H92 L88 100 H32 Z" fill="#faf8f3" />
+</svg>

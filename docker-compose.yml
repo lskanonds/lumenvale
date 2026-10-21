@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: lumenvale-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: lumenvale
+      POSTGRES_PASSWORD: lumenvale_dev
+      POSTGRES_DB: lumenvale
+    ports:
+      # 5434 on the host, to stay clear of a local Postgres on the default port
+      - '5434:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U lumenvale -d lumenvale']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  postgres_data:
